@@ -1,0 +1,3 @@
+/home/yuanlin/homework/lec4 /gaussian/build/CMakeFiles/rebuild_cache.dir
+/home/yuanlin/homework/lec4 /gaussian/build/CMakeFiles/edit_cache.dir
+/home/yuanlin/homework/lec4 /gaussian/build/CMakeFiles/gaussnewton.dir

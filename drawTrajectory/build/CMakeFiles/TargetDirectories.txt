@@ -1,0 +1,3 @@
+/home/yuanlin/homework/drawTrajectory/build/CMakeFiles/rebuild_cache.dir
+/home/yuanlin/homework/drawTrajectory/build/CMakeFiles/edit_cache.dir
+/home/yuanlin/homework/drawTrajectory/build/CMakeFiles/drawTraJectory.dir

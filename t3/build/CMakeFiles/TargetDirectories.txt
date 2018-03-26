@@ -1,0 +1,5 @@
+/home/yuanlin/homework/t3/build/CMakeFiles/edit_cache.dir
+/home/yuanlin/homework/t3/build/CMakeFiles/rebuild_cache.dir
+/home/yuanlin/homework/t3/build/lib/CMakeFiles/edit_cache.dir
+/home/yuanlin/homework/t3/build/lib/CMakeFiles/rebuild_cache.dir
+/home/yuanlin/homework/t3/build/lib/CMakeFiles/sayhello.dir

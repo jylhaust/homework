@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libsayhello.so -o libsayhello.so CMakeFiles/sayhello.dir/hello.c.o 
