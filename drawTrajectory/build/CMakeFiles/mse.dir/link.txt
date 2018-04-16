@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -O3 -O3 -DNDEBUG   CMakeFiles/mse.dir/mse.cpp.o  -o mse -rdynamic 
