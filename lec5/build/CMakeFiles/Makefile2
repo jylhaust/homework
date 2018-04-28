@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/yuanlin/homework/lec5/build
 CMakeFiles/orbextrack.dir/all:
 	$(MAKE) -f CMakeFiles/orbextrack.dir/build.make CMakeFiles/orbextrack.dir/depend
 	$(MAKE) -f CMakeFiles/orbextrack.dir/build.make CMakeFiles/orbextrack.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuanlin/homework/lec5/build/CMakeFiles --progress-num=1,2 "Built target orbextrack"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuanlin/homework/lec5/build/CMakeFiles --progress-num=7,8 "Built target orbextrack"
 .PHONY : CMakeFiles/orbextrack.dir/all
 
 # Include target in all.
@@ -93,6 +93,117 @@ CMakeFiles/orbextrack.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/orbextrack.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/E2Rt.dir
+
+# All Build rule for target.
+CMakeFiles/E2Rt.dir/all:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/depend
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuanlin/homework/lec5/build/CMakeFiles --progress-num=3,4 "Built target E2Rt"
+.PHONY : CMakeFiles/E2Rt.dir/all
+
+# Include target in all.
+all: CMakeFiles/E2Rt.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/E2Rt.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/E2Rt.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 0
+.PHONY : CMakeFiles/E2Rt.dir/rule
+
+# Convenience name for target.
+E2Rt: CMakeFiles/E2Rt.dir/rule
+
+.PHONY : E2Rt
+
+# clean rule for target.
+CMakeFiles/E2Rt.dir/clean:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/clean
+.PHONY : CMakeFiles/E2Rt.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/E2Rt.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ORB.dir
+
+# All Build rule for target.
+CMakeFiles/ORB.dir/all:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/depend
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuanlin/homework/lec5/build/CMakeFiles --progress-num=5,6 "Built target ORB"
+.PHONY : CMakeFiles/ORB.dir/all
+
+# Include target in all.
+all: CMakeFiles/ORB.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ORB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ORB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 0
+.PHONY : CMakeFiles/ORB.dir/rule
+
+# Convenience name for target.
+ORB: CMakeFiles/ORB.dir/rule
+
+.PHONY : ORB
+
+# clean rule for target.
+CMakeFiles/ORB.dir/clean:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/clean
+.PHONY : CMakeFiles/ORB.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ORB.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/BuddleJ.dir
+
+# All Build rule for target.
+CMakeFiles/BuddleJ.dir/all:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/depend
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yuanlin/homework/lec5/build/CMakeFiles --progress-num=1,2 "Built target BuddleJ"
+.PHONY : CMakeFiles/BuddleJ.dir/all
+
+# Include target in all.
+all: CMakeFiles/BuddleJ.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/BuddleJ.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/BuddleJ.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuanlin/homework/lec5/build/CMakeFiles 0
+.PHONY : CMakeFiles/BuddleJ.dir/rule
+
+# Convenience name for target.
+BuddleJ: CMakeFiles/BuddleJ.dir/rule
+
+.PHONY : BuddleJ
+
+# clean rule for target.
+CMakeFiles/BuddleJ.dir/clean:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/clean
+.PHONY : CMakeFiles/BuddleJ.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/BuddleJ.dir/clean
 
 .PHONY : clean
 

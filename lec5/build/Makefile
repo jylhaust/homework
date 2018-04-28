@@ -123,6 +123,126 @@ orbextrack/fast:
 	$(MAKE) -f CMakeFiles/orbextrack.dir/build.make CMakeFiles/orbextrack.dir/build
 .PHONY : orbextrack/fast
 
+#=============================================================================
+# Target rules for targets named E2Rt
+
+# Build rule for target.
+E2Rt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 E2Rt
+.PHONY : E2Rt
+
+# fast build rule for target.
+E2Rt/fast:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/build
+.PHONY : E2Rt/fast
+
+#=============================================================================
+# Target rules for targets named ORB
+
+# Build rule for target.
+ORB: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ORB
+.PHONY : ORB
+
+# fast build rule for target.
+ORB/fast:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/build
+.PHONY : ORB/fast
+
+#=============================================================================
+# Target rules for targets named BuddleJ
+
+# Build rule for target.
+BuddleJ: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BuddleJ
+.PHONY : BuddleJ
+
+# fast build rule for target.
+BuddleJ/fast:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/build
+.PHONY : BuddleJ/fast
+
+E2Rt.o: E2Rt.cpp.o
+
+.PHONY : E2Rt.o
+
+# target to build an object file
+E2Rt.cpp.o:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/E2Rt.cpp.o
+.PHONY : E2Rt.cpp.o
+
+E2Rt.i: E2Rt.cpp.i
+
+.PHONY : E2Rt.i
+
+# target to preprocess a source file
+E2Rt.cpp.i:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/E2Rt.cpp.i
+.PHONY : E2Rt.cpp.i
+
+E2Rt.s: E2Rt.cpp.s
+
+.PHONY : E2Rt.s
+
+# target to generate assembly for a file
+E2Rt.cpp.s:
+	$(MAKE) -f CMakeFiles/E2Rt.dir/build.make CMakeFiles/E2Rt.dir/E2Rt.cpp.s
+.PHONY : E2Rt.cpp.s
+
+GN-BA.o: GN-BA.cpp.o
+
+.PHONY : GN-BA.o
+
+# target to build an object file
+GN-BA.cpp.o:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/GN-BA.cpp.o
+.PHONY : GN-BA.cpp.o
+
+GN-BA.i: GN-BA.cpp.i
+
+.PHONY : GN-BA.i
+
+# target to preprocess a source file
+GN-BA.cpp.i:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/GN-BA.cpp.i
+.PHONY : GN-BA.cpp.i
+
+GN-BA.s: GN-BA.cpp.s
+
+.PHONY : GN-BA.s
+
+# target to generate assembly for a file
+GN-BA.cpp.s:
+	$(MAKE) -f CMakeFiles/BuddleJ.dir/build.make CMakeFiles/BuddleJ.dir/GN-BA.cpp.s
+.PHONY : GN-BA.cpp.s
+
+ORB.o: ORB.cpp.o
+
+.PHONY : ORB.o
+
+# target to build an object file
+ORB.cpp.o:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/ORB.cpp.o
+.PHONY : ORB.cpp.o
+
+ORB.i: ORB.cpp.i
+
+.PHONY : ORB.i
+
+# target to preprocess a source file
+ORB.cpp.i:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/ORB.cpp.i
+.PHONY : ORB.cpp.i
+
+ORB.s: ORB.cpp.s
+
+.PHONY : ORB.s
+
+# target to generate assembly for a file
+ORB.cpp.s:
+	$(MAKE) -f CMakeFiles/ORB.dir/build.make CMakeFiles/ORB.dir/ORB.cpp.s
+.PHONY : ORB.cpp.s
+
 computeORB.o: computeORB.cpp.o
 
 .PHONY : computeORB.o
@@ -157,8 +277,20 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... orbextrack"
+	@echo "... E2Rt"
+	@echo "... edit_cache"
+	@echo "... ORB"
+	@echo "... BuddleJ"
+	@echo "... E2Rt.o"
+	@echo "... E2Rt.i"
+	@echo "... E2Rt.s"
+	@echo "... GN-BA.o"
+	@echo "... GN-BA.i"
+	@echo "... GN-BA.s"
+	@echo "... ORB.o"
+	@echo "... ORB.i"
+	@echo "... ORB.s"
 	@echo "... computeORB.o"
 	@echo "... computeORB.i"
 	@echo "... computeORB.s"

@@ -55,9 +55,9 @@ int main(int argc, char **argv) {
     cv::Mat second_image = cv::imread(second_file, 0);  // load grayscale image
 
     // plot the image
-    //cv::imshow("first image", first_image);
-   // cv::imshow("second image", second_image);
-   // cv::waitKey(0);
+    // cv::imshow("first image", first_image);
+    // cv::imshow("second image", second_image);
+    // cv::waitKey(5);
 
     // detect FAST keypoints using threshold=40
     vector<cv::KeyPoint> keypoints;
@@ -75,9 +75,9 @@ int main(int argc, char **argv) {
     cv::Mat image_show;
     cv::drawKeypoints(first_image, keypoints, image_show, cv::Scalar::all(-1),
                       cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
-   // cv::imshow("features", image_show);
-   // cv::imwrite("feat1.png", image_show);
-   // cv::waitKey(0);
+//    cv::imshow("features", image_show);
+//    cv::imwrite("feat1.png", image_show);
+//    cv::waitKey(5);
 
     // we can also match descriptors between images
     // same for the second
@@ -398,44 +398,38 @@ int ORB_pattern[256 * 4] = {
         -1, -6, 0, -11/*mean (0.127148), correlation (0.547401)*/
 };
 
+
+
 // compute the descriptor
 void computeORBDesc(const cv::Mat &image, vector<cv::KeyPoint> &keypoints, vector<DescType> &desc) {
     for (auto &kp: keypoints) {
         DescType d(256, false);
         for (int i = 0; i < 256; i++) {
             // START YOUR CODE HERE (~7 lines)
-            int u_p,v_p,u_pd,v_pd,u_q,v_q,u_qd,v_qd;
-            u_p = kp.pt.x+ORB_pattern[4*i+0];
-            v_p = kp.pt.y+ORB_pattern[4*i+1];
-            u_q = kp.pt.x+ORB_pattern[4*i+2];
-            v_q = kp.pt.y+ORB_pattern[4*i+3];
-            u_pd = cvRound(cos(kp.angle)*(u_p)-sin(kp.angle)*(v_p));
-            v_pd = cvRound(sin(kp.angle)*(u_p)+cos(kp.angle)*(v_p));
-            u_qd = cvRound(cos(kp.angle)*(u_q)-sin(kp.angle)*(v_q));
-            v_qd = cvRound(sin(kp.angle)*(u_q)+cos(kp.angle)*(v_q));
+            float u_p,v_p,u_pd,v_pd,u_q,v_q,u_qd,v_qd;
+            u_p = ORB_pattern[4*i+0];
+            v_p = ORB_pattern[4*i+1];
+            u_q = ORB_pattern[4*i+2];
+            v_q = ORB_pattern[4*i+3];
+            u_pd = cvRound(cos(kp.angle*pi/180)*(u_p)-sin(kp.angle*pi/180)*(v_p)+kp.pt.x);
+            v_pd = cvRound(sin(kp.angle*pi/180)*(u_p)+cos(kp.angle*pi/180)*(v_p)+kp.pt.y);
+            u_qd = cvRound(cos(kp.angle*pi/180)*(u_q)-sin(kp.angle*pi/180)*(v_q)+kp.pt.x);
+            v_qd = cvRound(sin(kp.angle*pi/180)*(u_q)+cos(kp.angle*pi/180)*(v_q)+kp.pt.y);
             // cout<<u_p<<"--"<<v_p<<endl;
-            // if(u_pd<=0||u_pd>image.cols||v_pd<=0||v_qd>image.rows \
-            // ||u_qd<=0||u_qd>image.cols||v_pd<=0||v_qd>image.rows)
-            if(u_pd>0&&u_pd<image.cols&&v_pd>0&&v_qd<image.rows \
-            ||u_qd>0&&u_qd<image.cols&&v_pd>0&&v_qd<image.rows)
+            if(u_pd<0||u_pd>=image.cols||v_pd<0||v_pd>=image.rows \
+            ||u_qd<0||u_qd>=image.cols||v_qd<0||v_qd>=image.rows)
             {
-                if(image.at<uchar>(v_pd,u_pd)>image.at<uchar>(v_qd,u_qd))
-                    d[i] = 0;
-                // cout<<image.at<uchar>(v_pd,u_pd)<<endl;
-                d[i] = 1;  
+                 d.clear(); break;
             }
-                // d[i] = 0;
             else
             {
-                // d[i] = 0;
-                  d.clear();
+                if(image.at<uchar>(v_pd,u_pd)>image.at<uchar>(v_qd,u_qd))  d[i] = 0;
+                else d[i] = 1; 
             }    
-            // d[i] = 0;  // if kp goes outside, set d.clear()
 	    // END YOUR CODE HERE
         }
         desc.push_back(d);
     }
-
     int bad = 0;
     for (auto &d: desc) {
         if (d.empty()) bad++;
@@ -453,29 +447,84 @@ void bfMatch(const vector<DescType> &desc1, const vector<DescType> &desc2, vecto
     // cout<<desc1.size()<<endl; 
     for(int i = 0;i<desc1.size();i++)
     {
+        if(desc1[i].empty() ) continue;
+        cv::DMatch mcPoints;
         for(int j=0;j<desc2.size();j++)
         {
-            // cout<<desc1.at(i)<<endl;
-            // bool d1[256],d2[256];
-            uchar *s1,*s2;
-            int temp = 0;
-            HammingLUT hmlut;
-            s1 = desc1.at(i);
-            // d2 = desc2.at(j);
-            // temp = hmlut(d1,d2,256);
-            // temp=hmlut(&desc1.at(i),&desc2.at(j),256);
-            // for(int k=0;k<256;k++)
-            // {
-            //     num = 0;
-            //     temp = s1[i]^s2[i];
-            //     while
-            // }
-        }
+            if( desc2[j].empty() ) continue;
+            int sNum[desc2.size()] = {0};
+            const DescType& s1=desc1[i];
+            const DescType& s2=desc2[j];
+            // HammingLUT hmlut;
+            for(int k=0;k<256;k++)
+                if(s1[k] != s2[k]) sNum[j]++;
+             // if(sNum<256)
+            mcPoints.queryIdx = i;
+            mcPoints.trainIdx = j;
+            mcPoints.distance = 0;
+            cout<<"ijs: "<<i<<"  "<<j<<"  "<<sNum<<endl;
 
+        }
+        if (mcPoints.distance < d_max)  matches.push_back(mcPoints);
+        
+            // cout<<" distance: "<<mcPoints.distance<<endl;
     }
     // END YOUR CODE HERE
 
     for (auto &m: matches) {
+        cout <<" matchPoints  "<< m.queryIdx << ", " << m.trainIdx << ", " << m.distance << endl;
+    }
+    return;
+}
+/**/
+void bfMatch(const vector<DescType> &desc1, const vector<DescType> &desc2, vector<cv::DMatch> &matches)
+{
+    int d_max = 50;
+    // START YOUR CODE HERE (~12 lines)
+    // find matches between desc1 and desc2.
+    for(int i =0;i<desc1.size();i++)
+    {
+        const DescType& d1=desc1[i];
+        if(d1.empty())
+            continue;
+
+        cv::DMatch m;
+        m.distance=256;
+
+        for (int j = 0;j<desc2.size();j++)
+        {
+            const DescType& d2=desc2[j];
+            if(d2.empty())
+                continue;
+            int distance =0;
+            for (int k = 0;k<256;k++)
+            {
+                if (d2[k]!=d1[k])
+                    distance++;
+            }
+            if (distance<m.distance )
+            {
+                m.queryIdx=i;
+                m.trainIdx=j;
+                m.distance=distance;
+
+            }
+
+        }
+        if(m.distance<d_max)
+        {
+            //cout<<"matcher distance: "<<m.distance<<endl;
+            matches.push_back(m);
+
+        }
+
+    }
+
+
+    // END YOUR CODE HERE
+
+    for (auto &m : matches)
+    {
         cout << m.queryIdx << ", " << m.trainIdx << ", " << m.distance << endl;
     }
     return;

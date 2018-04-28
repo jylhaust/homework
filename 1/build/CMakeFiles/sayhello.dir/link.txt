@@ -1,1 +1,0 @@
-g++   -O3 -DNDEBUG   CMakeFiles/sayhello.dir/useHello.cpp.o  -o sayhello -rdynamic -lhello 

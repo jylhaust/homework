@@ -168,6 +168,9 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/opt/ros/kinetic/share/OpenCV-3.3.1-dev
 
+//The directory containing a CMake configuration file for Sophus.
+Sophus_DIR:PATH=/home/yuanlin/3rdlib/Sophus/build
+
 //Value Computed by CMake
 orb_BINARY_DIR:STATIC=/home/yuanlin/homework/lec5/build
 

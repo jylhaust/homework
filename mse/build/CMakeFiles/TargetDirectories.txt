@@ -1,3 +1,0 @@
-/home/yuanlin/homework/mse/build/CMakeFiles/edit_cache.dir
-/home/yuanlin/homework/mse/build/CMakeFiles/rebuild_cache.dir
-/home/yuanlin/homework/mse/build/CMakeFiles/mse.dir

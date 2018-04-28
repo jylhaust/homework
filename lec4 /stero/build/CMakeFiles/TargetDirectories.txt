@@ -1,3 +1,0 @@
-/home/yuanlin/homework/lec4 /stero/build/CMakeFiles/edit_cache.dir
-/home/yuanlin/homework/lec4 /stero/build/CMakeFiles/rebuild_cache.dir
-/home/yuanlin/homework/lec4 /stero/build/CMakeFiles/disparity.dir

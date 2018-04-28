@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -O3 -O3 -DNDEBUG   CMakeFiles/BuddleJ.dir/GN-BA.cpp.o  -o BuddleJ -rdynamic /home/yuanlin/3rdlib/Sophus/build/libSophus.so -Wl,-rpath,/home/yuanlin/3rdlib/Sophus/build 

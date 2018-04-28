@@ -4,6 +4,11 @@
         "slist": "cpp",
         "core": "cpp",
         "iosfwd": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "*.ipp": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "chrono": "cpp",
+        "iomanip": "cpp"
     }
 }
